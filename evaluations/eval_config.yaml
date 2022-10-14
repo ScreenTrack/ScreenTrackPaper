@@ -1,0 +1,50 @@
+state_length: 10
+trials: 10
+x_axis_range: [0, 0.5]
+output_name: "10"
+x_axis_point_cnt: 10
+methods:
+  nehomogena:
+    implementation: nehomogena
+    state_length: 10
+  Levenberg-Marquardt:
+    implementation: "Levenberg-Marquardt"
+    state_length: 10
+  rigid_body:
+    implementation: "rigid_body"
+    optimizer:
+      class_name: Adam
+      config:
+        learning_rate: 0.0002
+    loss: squared
+    steps: 10
+    state_length: 10
+  8_params:
+    implementation: "8_params"
+    optimizer:
+      class_name: Adam
+      config:
+        learning_rate: 0.001
+    loss: squared
+    steps: 10
+    state_length: 10
+  9_params:
+    implementation: "9_params"
+    optimizer:
+      class_name: SGD
+      config:
+        learning_rate: 9.5e-05
+        momentum: 0.69
+        nesterov: False
+    loss: squared
+    steps: 10
+    state_length: 10
+  rigid_body_quat:
+    implementation: "rigid_body_quat"
+    optimizer:
+      class_name: Adam
+      config:
+        learning_rate: 0.005
+    loss: squared
+    steps: 10
+    state_length: 10

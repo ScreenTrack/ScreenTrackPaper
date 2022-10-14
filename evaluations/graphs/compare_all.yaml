@@ -1,0 +1,45 @@
+trials: 1000
+x_axis_range: [0, 0.2]
+output_name: "all"
+x_axis_point_cnt: 10
+methods:
+  "None":
+    implementation: LM-raw
+    regularizer: 5.6e-17
+    regularizer_multiplier: 13
+    state_length: 10
+    steps: 100
+    #  "8C":
+    #    implementation: 8_params
+    #    optimizer:
+    #      class_name: Adam
+    #      config:
+    #        learning_rate: 0.0084
+    #        beta_1: 0.54
+    #        beta_2: 0.62
+    #    state_length: 10
+    #    steps: 100
+    #    loss: squared
+  "9C":
+    implementation: LM-9_params
+    regularizer: 1.8e-20
+    regularizer_multiplier: 3.5
+    state_length: 10
+    steps: 100
+  "RBA":
+    implementation: rigid_body
+    optimizer:
+      class_name: Adam
+      config:
+        learning_rate: 0.0015
+        beta_1: 0.71
+        beta_2: 0.33
+    state_length: 10
+    steps: 100
+    loss: squared
+  "RBQ":
+    implementation: LM-rigid_body_quat
+    regularizer: 1.3e-24
+    regularizer_multiplier: 4.7
+    state_length: 10
+    steps: 100

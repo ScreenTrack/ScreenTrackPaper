@@ -1,0 +1,15 @@
+width_range: [0.2, 2]  # assume monitor widths range from 20cm to 2m
+height_range: [0.2, 2]  # assume monitor heights range from 20cm to 2m
+camera_distance_range: [0, 6]  # assume camera is at most 6m from screen
+max_viewing_angle: 60  # degrees
+min_screen_percentage: 25  # require 25% of image to be the screen
+image:
+  width: 1920
+  height: 1080
+f_value: 1200
+coordinate_range: 10
+rectangle_count: 2000
+views_per_rectangle: 50
+batch_size: 100000
+output_path: "output/2000r50v.npy"
+sphere: true
